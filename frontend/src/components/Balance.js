@@ -1,19 +1,21 @@
 import React from 'react';
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { IncomeContext, TransactionsContext } from '../context/GlobalContext'
 
 const Balance = () => {
+	
+	
 	const [income] = useContext(IncomeContext);
 	//const [expense, setExpense] = useContext(ExpenseContext);
 	const [transactions] = useContext(TransactionsContext);
 
-	const incomeAll = transactions.filter(item => item.price > 0).reduce((acc, current) => {
-		return acc + current.price
+	const incomeAll = transactions.filter(item => item.amount > 0).reduce((acc, current) => {
+		return acc + Number(current.amount)
 
 	}, income);
 
-	const expenseAll = transactions.filter(item => item.price < 0).reduce((acc, current) => {
-		return acc += current.price
+	const expenseAll = transactions.filter(item => item.amount < 0).reduce((acc, current) => {
+		return acc += Number(current.amount)
 	}, 0);
 
 	const balance = (incomeAll - (-expenseAll));

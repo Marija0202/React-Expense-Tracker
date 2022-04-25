@@ -2,15 +2,18 @@
   "transactions": [
     {
       "id": 1,
-      "transactionName": "Salary",
-      "amount": 1200,
-      "typeOfTransaction": "income"
+      "transactionName": "Salary ",
+      "amount": "4000"
+    },
+    {
+      "id": 2,
+      "transactionName": "Auto reparieren",
+      "amount": "500"
     },
     {
       "id": 3,
-      "transactionName": "Auto",
-      "amount": 10000,
-      "typeOfTransaction": "expense"
+      "transactionName": "MIlch",
+      "amount": "-2"
     }
   ]
 }

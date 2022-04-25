@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "lodash": "^4.17.21",
     "lowdb": "^3.0.0"
