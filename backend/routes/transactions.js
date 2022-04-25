@@ -15,10 +15,10 @@ router
 
   const {transactionName, amount, typeOfTransaction} = request.body;
   
-   console.log(typeof amount)
-       console.log(request.body)
+  
+     
        if(db.data.transactions.length >0){
-      console.log(db.data.transactions.length)
+     
       const id = db.chain.get('transactions').takeRight(1).value()[0].id + 1
       db.chain.get('transactions').push({id, transactionName, amount, typeOfTransaction}).value();
       await db.write();
@@ -54,8 +54,8 @@ router
       return;
     }
     res.send({success:true, changedTransactions})
-}).delete("/transaction", async(req, res) =>{
-    const idId = db.data.transactions.id;
+}).delete("/transactions/:id", async(req, res) =>{
+    const idId = req.params.id;
     const convertID = Number(idId);
    
     const deletedTransactions = db.chain.get('transactions').find(transaction => transaction.id ===convertID ).value();
