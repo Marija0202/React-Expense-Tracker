@@ -4,8 +4,8 @@ import axios from "axios";
 
 const Transaction = ({ id, transactionName, amount }) => {
   const [transactions, setTransactions] = useContext(TransactionsContext);
- const[buttonClicked, setButtonClicked] = useState(false)
-  useEffect(() => {
+
+/*   useEffect(() => {
 
     const getAndSetState = async() =>{
       
@@ -17,15 +17,30 @@ const Transaction = ({ id, transactionName, amount }) => {
     }
     getAndSetState();
 
-  }, [buttonClicked])
+  }, [buttonClicked]) */
 
-  const handlerDelete = () => {
-    setButtonClicked(true);
+ /*  const handlerDelete = () => {
+   
     const newDelete = transactions.filter((item) => item.id !== id);
     //const newDelete = [...transactions];
     //newDelete.splice(id, 1);
     setTransactions(newDelete);
-  };
+  }; */
+
+  const handlerDelete = () => {
+    const getAndSetState = async() =>{
+      const response =await axios.delete(`http://localhost:4000/transactions/${id}`)
+      
+      setTransactions(transactions);
+     
+      const newDelete = transactions.filter((item) => item.id !== id);
+      
+      //const newDelete = [...transactions];
+      //newDelete.splice(id, 1);
+      setTransactions(newDelete);
+    }
+    getAndSetState();
+  }
 
   return (
     <li className="transaction">
