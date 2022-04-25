@@ -1,0 +1,8 @@
+X. npm install express
+X. npm cors     
+X.npm  install lowdb
+X. ein neues SERVER PORT(4000)anlegen
+    X. CRUD implementieren
+    X. routes erstellen 
+    X. lowdb initializieren 
+    4.4. errors handling 

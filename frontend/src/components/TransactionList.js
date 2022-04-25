@@ -4,11 +4,12 @@ import { TransactionsContext } from "../context/GlobalContext";
 
 const RenderTransactions = (arr) => {
   arr.map((liste, id) => {
+    console.log(liste)
     return (
       <Transaction
         key={id}
-        title={liste.title}
-        price={liste.price}
+        transactionName={liste.transactionName}
+        amount={liste.amount}
         id={liste.id}
       />
     );
