@@ -1,4 +1,3 @@
-// nodejs->json-lowdb-server.js
 
 //*** import nessacary stuff ***
 import { join, dirname } from 'path'
