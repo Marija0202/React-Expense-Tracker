@@ -1,9 +1,8 @@
 import React from 'react';
-import { useContext, useEffect } from 'react'
+import { useContext} from 'react'
 import { IncomeContext, TransactionsContext } from '../context/GlobalContext'
 
-const Balance = () => {
-	
+const Balance = () => {	
 	
 	const [income] = useContext(IncomeContext);
 	//const [expense, setExpense] = useContext(ExpenseContext);
@@ -18,10 +17,9 @@ const Balance = () => {
 		return acc += Number(current.amount)
 	}, 0);
 
-	const balance = (incomeAll - (-expenseAll));
+	const balance = (incomeAll - (-expenseAll)).toFixed(2);
 
 	return (
-
 		<section className="balance">
 			<h2 className="balance__title">Balance <span>{balance} Euro</span></h2>
 			<div className='balance__container'>
@@ -35,6 +33,5 @@ const Balance = () => {
 		</section>
 	)
 }
-
 
 export default Balance;

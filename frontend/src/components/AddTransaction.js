@@ -8,47 +8,31 @@ const AddTransaction = () => {
   const currentTransaction = {};
   const [transactions, setTransactions] = useContext(TransactionsContext);
 
-
-
   useEffect(() => {
-
-    const getAndSetState = async() =>{
-      
+    const getAndSetState = async() =>{      
       const response =await axios.get('http://localhost:4000/transactions')
-       
-      setTransactions(response.data);
-     
-     
+      setTransactions(response.data);   
     }
     getAndSetState();
+  },[]);
 
-  }, [])
+  //submitHandler
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   const inputTitle = document.querySelector("#text-transaction");    
+  //   const inputAmount = document.querySelector("#amount-transaction");
+  //   if(isNaN(inputAmount.value)) {
+  //     return alert("Please enter a number");
+  //   }
+  //   const newTransaction = [...transactions];
+  //   currentTransaction.id = transactions.length;
+  //   newTransaction.unshift(currentTransaction);
+  //   setTransactions(newTransaction);
 
-
-  
-
-  // submitHandler
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const inputTitle = document.querySelector("#text-transaction");
-    console.log(inputTitle);
-    const inputAmount = document.querySelector("#amount-transaction");
-    if(isNaN(inputAmount.value)) {
-      return alert("Please enter a number");
-    }
-    const newTransaction = [...transactions];
-
-    currentTransaction.id = transactions.length;
-
-    newTransaction.unshift(currentTransaction);
-    setTransactions(newTransaction);
-
-    inputTitle.value = "";
-
-    inputAmount.value = "";
-
-    inputTitle.focus();
-  };
+  //   inputTitle.value = "";
+  //   inputAmount.value = "";
+  //   inputTitle.focus();
+  // };
 
   // HandleInputItem
   const handleInputText = (e) => {
@@ -76,7 +60,6 @@ const AddTransaction = () => {
      
       <form action='http://localhost:4000/transactions' method='post'>
         <h2 className="form__title">Add Transaction</h2>
-
         <label htmlFor="text-transaction"> Transaction</label>
         <input
           required
@@ -92,7 +75,7 @@ const AddTransaction = () => {
           required
           value={transactions.amount}
           onChange={handleInputNumber}
-          type= "number"
+          type= "number"  step="0.01"
           name = "amount"
           id="amount-transaction"
           placeholder="Enter amount"

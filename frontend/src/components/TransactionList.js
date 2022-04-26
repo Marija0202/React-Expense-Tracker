@@ -3,8 +3,7 @@ import Transaction from "./Transaction";
 import { TransactionsContext } from "../context/GlobalContext";
 
 const RenderTransactions = (arr) => {
-  arr.map((liste, id) => {
-    console.log(liste)
+  arr.map((liste, id) => {    
     return (
       <Transaction
         key={id}
@@ -15,10 +14,12 @@ const RenderTransactions = (arr) => {
     );
   });
 };
+
 const TransactionList = () => {
   const [transaction] = useContext(TransactionsContext);
   return (
     <ul className="transaction-list">{RenderTransactions(transaction)}</ul>
   );
 };
+
 export default TransactionList;

@@ -8,20 +8,18 @@ const PORT = 4000;
 
 app.use(cors());
 
-
-app.use( express.urlencoded({extended:false}) );// use querysting library
+app.use( express.urlencoded({extended:false}) );
 app.use( express.json() );
 app.use(transactions);
 
-
-
-
-// app.use(express.static('./frontend/public'))
  app.get("/", (req, res) => {
-     res.send('Welcome')
+     res.send('<h1> Welcome </h1>')
  })
 
+ .post("/transactions", (req,res) =>{
+     res.redirect("localhost:3000");
+ } )
 
 app.listen(PORT, ()=> {
-    console.log("Server laüft", PORT);
+    console.log("Server laüft in  Port =>", PORT);
 });
