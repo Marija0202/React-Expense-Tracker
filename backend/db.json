@@ -1,14 +1,3 @@
 {
-  "transactions": [
-    {
-      "id": 2,
-      "transactionName": "Einkauf",
-      "amount": "-455"
-    },
-    {
-      "id": 1,
-      "transactionName": "salary",
-      "amount": "4558"
-    }
-  ]
+  "transactions": []
 }

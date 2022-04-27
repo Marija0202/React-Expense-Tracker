@@ -1,0 +1,22 @@
+{
+  "name": "gruppenprojekt-1",
+  "version": "1.0.0",
+  "description": "Gruppenprojekt 1- Marija/Antonio/Luciano",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FbW-D03-2/Gruppenprojekt-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FbW-D03-2/Gruppenprojekt-1/issues"
+  },
+  "homepage": "https://github.com/FbW-D03-2/Gruppenprojekt-1#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
